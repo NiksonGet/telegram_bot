@@ -10,10 +10,10 @@ dp = Dispatcher()
 @dp.message()
 async def start(message: types.Message):
     keyboard = ReplyKeyboardMarkup(
-    keyboard=[[KeyboardButton(text="Открыть приложение", web_app=WebAppInfo(url="https://your-app-url.vercel.app"))]],
+    keyboard=[[KeyboardButton(text="Открыть приложение",web_app=WebAppInfo(url="https://NiksonGet.github.io/telegram_bot/"))]],
     resize_keyboard=True
 )
-    button = KeyboardButton(text="Открыть приложение", web_app=WebAppInfo(url="https://mytelegramapp.vercel.app"))
+    button = KeyboardButton(text="Открыть приложение", web_app=WebAppInfo(url="https://NiksonGet.github.io/telegram_bot/"))
     keyboard.add(button)
 
     await message.answer("Нажми на кнопку, чтобы открыть WebApp!", reply_markup=keyboard)
