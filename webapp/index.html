@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Красивые девочки</title>
+</head>
+<body>
+    <h1>Салам</h1>
+    <button onclick="sendMessage()">Отправить данные в бота</button>
+
+    <script>
+        let tg = window.Telegram.WebApp;
+        tg.expand();
+
+        function sendMessage() {
+            tg.sendData("Пользователь нажал кнопку!"); 
+            alert("Сообщение отправлено в бота!");
+        }
+    </script>
+</body>
+</html>
