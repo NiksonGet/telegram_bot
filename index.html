@@ -1,22 +1,83 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Красивые девочки</title>
+    <title>Telegram WebApp</title>
+    <script src="https://telegram.org/js/telegram-web-app.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css" />
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #f5f5f5;
+            padding: 20px;
+        }
+        h1 {
+            color: #333;
+        }
+        .btn {
+            display: inline-block;
+            padding: 15px 25px;
+            font-size: 18px;
+            color: white;
+            background: #0088cc;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+        .btn:hover {
+            background: #006699;
+        }
+        .swiper {
+            width: 100%;
+            max-width: 400px;
+            height: 250px;
+            margin: 20px auto;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        .swiper-slide img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    </style>
 </head>
 <body>
-    <h1>Салам</h1>
-    <button onclick="sendMessage()">Отправить данные в бота</button>
 
+    <h1>Добро пожаловать в WebApp!</h1>
+
+    <!-- Слайдер -->
+    <div class="swiper">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide"><img src="https://via.placeholder.com/400x250/ff7f7f/fff?text=Картинка+1" alt="1"></div>
+            <div class="swiper-slide"><img src="https://via.placeholder.com/400x250/77dd77/fff?text=Картинка+2" alt="2"></div>
+            <div class="swiper-slide"><img src="https://via.placeholder.com/400x250/779ecb/fff?text=Картинка+3" alt="3"></div>
+        </div>
+    </div>
+
+    <!-- Кнопка -->
+    <button class="btn" onclick="sendMessage()">Отправить в бота</button>
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
     <script>
         let tg = window.Telegram.WebApp;
         tg.expand();
 
         function sendMessage() {
-            tg.sendData("Пользователь нажал кнопку!"); 
+            tg.sendData("Пользователь нажал кнопку!");
             alert("Сообщение отправлено в бота!");
         }
+
+        // Инициализация Swiper.js
+        new Swiper('.swiper', {
+            loop: true,
+            autoplay: { delay: 2500, disableOnInteraction: false },
+        });
     </script>
+
 </body>
 </html>
